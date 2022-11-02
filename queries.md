@@ -192,6 +192,20 @@ db.listingsAndReviews.find({
 })
 ```
 
+## Find by keys in a nested array of objects
+```
+db.listingsAndReviews.find({
+    'reviews':{
+        '$elemMatch': {
+            'reviewer_name':"Davi"
+        }
+    }
+},{
+    'name': 1,
+    'reviews.$': 1
+})
+```
+
 ## Find by ObjectID
 ```
 use sample_mflix;
